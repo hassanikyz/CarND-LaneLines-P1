@@ -44,11 +44,11 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be when lanes are curved and not straight, code treats all lanes are straight line
+One potential shortcoming would be when lanes are curved and not straight, code treats all lanes as straight line
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to connect individual pieces of the lanes detected via edge detection by sorting them in a way lane fidelity remains. This can potentially make it work on curved lanes too.
 
-Another potential improvement could be to ...
+
