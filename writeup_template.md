@@ -23,9 +23,18 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 6 steps. 
+1. Image is first converted to grayscale, this enables quicker edge detection (colors changing from white to black/gray is easier than in RGB pixels) 
+2. Suppressed noise and spurious gradients by averaging pixels via gaussian blur
+3. Edge detection
+4. Define a region of interest so as to remove extra edges which are likely not part of lanes on the road
+5. Drawing lines on an image in diff color (in this case red) where lanes are detected
+6. Adding this image on top of the original image to mark the lanes
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by 
+1. Segregated lines which are left and right using positive and negative gradient as key
+2. Use longest line/edge as proxy for the entire lane
+3. Extended the longest line up and down to mark it as lane
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
@@ -35,9 +44,7 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+One potential shortcoming would be when lanes are curved and not straight, code treats all lanes are straight line
 
 
 ### 3. Suggest possible improvements to your pipeline
